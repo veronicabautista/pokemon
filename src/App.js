@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Filter from './components/Filter';
+import PokemonList from './components/PokemonList'
 
 const callApi = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -22,7 +23,7 @@ class App extends Component {
 
   fetchPokemonList (){
     fetch (callApi)
-    .then((response) => response.json())
+    .then(response => response.json())
     .then(data => {
       this.setState({
         pokemons: data
@@ -43,9 +44,12 @@ class App extends Component {
       <div className="kanto_card">
         <h1 className="title">Pokédex Kanto</h1>
         <Filter
-            searchPokemon={this.searchPokemon} />
-
-        {/* <PokemonList pokemonKanto={this.props.pokedex} pokeName={this.state.name}/> */}
+            searchPokemon={this.searchPokemon} 
+            pokemons={this.state.pokemons}
+            name={this.state.name} />
+        <PokemonList 
+            pokemons={this.state.pokemons}
+            name={this.state.name} />
       </div>
 
     );
