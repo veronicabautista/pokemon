@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Filter from './components/Filter';
 import PokemonList from './components/PokemonList'
 
-const callApi = "https://pokeapi.co/api/v2/pokemon/";
+// const callApi = "https://pokeapi.co/api/v2/pokemon/";
 
 class App extends Component {
   constructor(props) {
@@ -22,13 +22,15 @@ class App extends Component {
   }
 
   fetchPokemonList (){
-    fetch (callApi)
-    .then(response => response.json())
-    .then(data => {
+    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25')
+    .then(response => {
+      return response.json();
+    })
+    .then(apiResponse => {
       this.setState({
-        pokemons: data
-      });
-    });
+        pokemons: apiResponse.results
+      })
+    })
   }
 
   searchPokemon(event) {
