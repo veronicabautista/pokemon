@@ -10,11 +10,11 @@ class App extends Component {
 
     this.state = {
       pokemons: [],
-      name: "",
-      info: ""
+      pokemonName: "",
     }
 
-   this.searchPokemon = this.searchPokemon.bind(this);
+  this.searchPokemon = this.searchPokemon.bind(this);
+  this.fetchPokemonList = this.fetchPokemonList.bind(this);
   }
 
   componentDidMount () {
@@ -26,18 +26,35 @@ class App extends Component {
     .then(response => {
       return response.json();
     })
-    .then(apiResponse => {
-      this.setState({
-        pokemons: apiResponse.results
+    .then(data=> {
+      this.details(data.results);
       })
-    })
   }
+
+  details(data){
+    let pokemonDetail=[];
+    data.forEach(pokemon => {
+      console.log("pokemonURL " + pokemon.url)
+      fetch(pokemon.url)
+      .then(response => {
+        return response.json();
+      })
+      .then(info => {
+        console.log("pokemonData " + info)
+        pokemonDetail.push(info);
+        this.setState({
+          pokemons: pokemonDetail
+        })
+      });
+      console.log("arrayPokemonsData" + pokemonDetail)
+    });
+  }
+
 
   searchPokemon(event) {
     const myPoke = event.currentTarget.value;
-
     this.setState({
-      name: myPoke
+      pokemonName: myPoke
     });
   }
 
@@ -48,10 +65,10 @@ class App extends Component {
         <Filter
             searchPokemon={this.searchPokemon} 
             pokemons={this.state.pokemons}
-            name={this.state.name} />
+            pokemonName={this.state.pokemonName} />
         <PokemonList 
             pokemons={this.state.pokemons}
-            name={this.state.name} />
+            pokemonName={this.state.pokemonName} />
       </div>
 
     );

@@ -5,17 +5,23 @@ class PokemonList extends React.Component {
 
     return (
         <div>
-				  <ul className="container__list">
+				  <ul className="pokemonlist">
 					{this.props.pokemons
+						.sort((a, b) => a.id - b.id)
 						.filter(search => {
-							return search.name.toLocaleLowerCase().includes(this.props.name.toLocaleLowerCase());
+							return search.name.toLocaleLowerCase().includes(this.props.pokemonName.toLocaleLowerCase());
 						})
-						.map((item => {
+						.map((poke => {
 							return (
-								<li className="pokemon__card">{item.name}</li>
-							);
+								<li className="pokemonlist__card" key={poke.name}>
+                <img className="pokemonlist__image" src={poke.sprites.front_default} alt="pokemon"/>
+                <p className="pokemonlist__id">{poke.id}</p>
+								<p className="pokemonlist__name">{poke.name}</p>					 
+								</li>
+							)
 						}))
 					}
+
           </ul>
 		</div>
     );
