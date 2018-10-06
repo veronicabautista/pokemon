@@ -1,0 +1,28 @@
+.pokedex__main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pokedex__tittle {
+  margin: 20px;
+}
+
+.pokedex__input {
+  box-shadow: 3px;
+}
+.pokedex__searchbox {
+  width: 700px;
+  box-shadow: 3px;
+  text-align: center;
+  margin: 10px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.pokedex__footer {
+  color: gray;
+  font-size: 12px;
+}

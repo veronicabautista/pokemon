@@ -5,7 +5,7 @@ class PokemonList extends React.Component {
   render() {
 
     return (
-        <div>
+        <div className="pokedex__container">
 				  <ul className="pokemonlist">
 					{this.props.pokemons
 						.sort((a, b) => a.id - b.id)

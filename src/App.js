@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import './App.css';
 import Filter from './components/Filter';
 import PokemonList from './components/PokemonList'
 
-// const callApi = "https://pokeapi.co/api/v2/pokemon/";
+// const callApi = "https://pokeapi.co/api/v2/pokemon/" 'http://pokeapi.salestock.net/api/v2/pokemon/?limit=25
+;
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +24,7 @@ class App extends Component {
   }
 
   fetchPokemonList (){
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=2")
+    fetch('https://pokeapi.co/api/v2/pokemon/' )
     .then(response => {
       return response.json();
     })
@@ -60,8 +62,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="kanto_card">
-        <h1 className="title">Pokédex Kanto</h1>
+      <div className="pokedex__main">
+        <div className="pokedex__tittle">
+          <h1 className="title">Pokédex</h1>
+        </div>
         <Filter
             searchPokemon={this.searchPokemon} 
             pokemons={this.state.pokemons}
@@ -69,8 +73,13 @@ class App extends Component {
         <PokemonList 
             pokemons={this.state.pokemons}
             pokemonName={this.state.pokemonName} />
+        <div className="pokedex__footer">
+          <span>
+            <p>Made with <a href="https://pokeapi.co/">PokeApi</a>.
+            Pokémon and Pokémon character names are trademarks of Nintendo</p>
+          </span>
+        </div>
       </div>
-
     );
   }
 }

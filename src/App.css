@@ -1,32 +1,49 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokedex__main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  text-align: center; }
 
-.App-link {
-  color: #61dafb;
-}
+.pokedex__tittle {
+  margin: 20px; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.pokedex__input {
+  box-shadow: 3px; }
+
+.pokedex__searchbox {
+  width: 700px;
+  box-shadow: 3px;
+  text-align: center;
+  margin: 10px;
+  font-size: 16px;
+  padding: 5px; }
+
+.pokedex__footer {
+  color: gray;
+  font-size: 12px; }
+
+.pokemonlist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 20px;
+  justify-content: center;
+  margin: 20px;
+  box-shadow: 3px; }
+
+.pokemon__image {
+  background-color: white; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif; }
