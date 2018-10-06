@@ -4,7 +4,7 @@ class Filter extends React.Component {
   render() {
     return (
       <div>
-      <input type="text" placeholder="Enter the name" name={this.props.name} onChange={this.props.searchPokemon}/>
+      <input type="text" placeholder="Filtra pokemons por nombre" name={this.props.name} onChange={this.props.searchPokemon}/>
     </div>
     );
   }

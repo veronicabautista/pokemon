@@ -1,4 +1,5 @@
 import React from "react";
+import PokemonCard from "./PokemonCard";
 
 class PokemonList extends React.Component {
   render() {
@@ -11,21 +12,17 @@ class PokemonList extends React.Component {
 						.filter(search => {
 							return search.name.toLocaleLowerCase().includes(this.props.pokemonName.toLocaleLowerCase());
 						})
-						.map((poke => {
+						.map((card => {
 							return (
-								<li className="pokemonlist__card" key={poke.name}>
-                <img className="pokemonlist__image" src={poke.sprites.front_default} alt="pokemon"/>
-                <p className="pokemonlist__id">{poke.id}</p>
-								<p className="pokemonlist__name">{poke.name}</p>					 
+								<li className="pokemonlist__card" key={card.id}>
+                	<PokemonCard detail={card}/>				 
 								</li>
 							)
 						}))
 					}
-
           </ul>
 		</div>
     );
-
   }
 }
 

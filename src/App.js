@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   fetchPokemonList (){
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25')
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=2")
     .then(response => {
       return response.json();
     })
