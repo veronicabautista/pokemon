@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from "./images/pokedex_logo.png";
+import logo from "./images/logo.png";
 import Filter from './components/Filter';
 import PokemonList from './components/PokemonList'
 
@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className="pokedex__main">
         <div className="pokedex__tittle">
-          <img className="title" src={logo} />
+          <img className="title" src={logo} alt="logo"/>
         </div>
         <Filter
             searchPokemon={this.searchPokemon} 
