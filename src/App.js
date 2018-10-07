@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo from "./images/logo.png";
+import Header from './components/Header';
 import Filter from './components/Filter';
-import PokemonList from './components/PokemonList'
-
+import PokemonList from './components/PokemonList';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -15,39 +15,22 @@ class App extends Component {
     }
 
   this.searchPokemon = this.searchPokemon.bind(this);
-  this.fetchPokemonList = this.fetchPokemonList.bind(this);
   }
 
   componentDidMount () {
-    this.fetchPokemonList()
-  }
-
-  fetchPokemonList (){
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25' )
-    .then(response => {
-      return response.json();
-    })
-    .then(data=> {
-      this.details(data.results);
-      })
-  }
-
-  details(data){
-    let pokemonDetail=[];
-    data.forEach(pokemon => {
-      fetch(pokemon.url)
-      .then(response => {
-        return response.json();
-      })
-      .then(info => {
-        pokemonDetail.push(info);
-        this.setState({
-          pokemons: pokemonDetail
+    const pokedex = [];
+    for (let i = 1; i < 26; i++) {
+      fetch('https://pokeapi.co/api/v2/pokemon/' + i + '/')
+        .then(response => {
+          return response.json();
         })
-      });
-    });
+        .then(info => {
+          pokedex.push(info)
+          this.setState({ pokemons: [...pokedex ] });
+          console.log(this.state.pokemons);
+        })
+    }
   }
-
 
   searchPokemon(event) {
     const myPoke = event.currentTarget.value;
@@ -59,9 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="pokedex__main">
-        <div className="pokedex__tittle">
-          <img className="title" src={logo} alt="logo"/>
-        </div>
+        <Header />
         <Filter
             searchPokemon={this.searchPokemon} 
             pokemons={this.state.pokemons}
@@ -69,12 +50,7 @@ class App extends Component {
         <PokemonList 
             pokemons={this.state.pokemons}
             pokemonName={this.state.pokemonName} />
-        <div className="pokedex__footer">
-          <span>
-            <p>Made with <a href="https://pokeapi.co/">PokeApi</a>.
-            Pokémon and Pokémon character names are trademarks of Nintendo.</p>
-          </span>
-        </div>
+        <Footer />
       </div>
     );
   }

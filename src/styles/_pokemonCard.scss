@@ -14,8 +14,8 @@
 	display: flex;
 	align-content: flex-start;
 	justify-content: center;
-	width: 40px;
-	padding: 5px;
+	width: 50px;
+	padding: 3px;
 }
 
 .pokemon__id {
@@ -51,5 +51,6 @@
 	border-radius: 3px;
 	font-size: 10px;
 	padding: 2px;
+	padding-left: 0px;
 	margin: 2px;
 }
