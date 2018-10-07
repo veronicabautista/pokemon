@@ -1,0 +1,15 @@
+{
+  "main.css": "./static/css/main.da3ab013.chunk.css",
+  "main.js": "./static/js/main.e6dedd7a.chunk.js",
+  "main.js.map": "./static/js/main.e6dedd7a.chunk.js.map",
+  "static/js/1.7268bd75.chunk.js": "./static/js/1.7268bd75.chunk.js",
+  "static/js/1.7268bd75.chunk.js.map": "./static/js/1.7268bd75.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/css/main.da3ab013.chunk.css.map": "./static/css/main.da3ab013.chunk.css.map",
+  "static/media/logo.png": "./static/media/logo.799db9c7.png",
+  "static/media/App.css": "./static/media/pikachu-bg.bb10e5f1.png",
+  "index.html": "./index.html",
+  "precache-manifest.b83f45ec9885b73474caccfe1490cf60.js": "./precache-manifest.b83f45ec9885b73474caccfe1490cf60.js",
+  "service-worker.js": "./service-worker.js"
+}
