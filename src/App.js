@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import logo from "./images/pokedex_logo.png";
 import Filter from './components/Filter';
 import PokemonList from './components/PokemonList'
 
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   fetchPokemonList (){
-    fetch('https://pokeapi.co/api/v2/pokemon/' )
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=5' )
     .then(response => {
       return response.json();
     })
@@ -64,7 +65,7 @@ class App extends Component {
     return (
       <div className="pokedex__main">
         <div className="pokedex__tittle">
-          <h1 className="title">Pokédex</h1>
+          <img className="title" src={logo} />
         </div>
         <Filter
             searchPokemon={this.searchPokemon} 

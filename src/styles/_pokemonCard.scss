@@ -1,3 +1,25 @@
 .pokemon__image {
+    background-color: lightgrey;
+    width: 200px;
+    height: 120px;
+}
+
+.pokemon__id--container {
+    background-color: #999999;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    width: 30px;
+    padding: 5px;
+    font-size: 12px;
+    color: #663300;
+    font-weight: bold;
+}
+
+.pokemon__id {
+
+}
+
+.pokemon__info {
     background-color: white;
 }
