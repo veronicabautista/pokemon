@@ -2,11 +2,11 @@ import React from "react";
 import PokemonCard from "./PokemonCard";
 
 class PokemonList extends React.Component {
-  render() {
+	render() {
 
-    return (
-        <div className="pokedex__container">
-				  <ul className="pokemonlist">
+		return (
+			<div className="pokedex__container">
+				<ul className="pokemonlist">
 					{this.props.pokemons
 						.sort((a, b) => a.id - b.id)
 						.filter(search => {
@@ -15,15 +15,15 @@ class PokemonList extends React.Component {
 						.map((card => {
 							return (
 								<li className="pokemonlist__card" key={card.id}>
-                	<PokemonCard detail={card}/>				 
+									<PokemonCard detail={card} />
 								</li>
 							)
 						}))
 					}
-          </ul>
-		</div>
-    );
-  }
+				</ul>
+			</div>
+		);
+	}
 }
 
 export default PokemonList;

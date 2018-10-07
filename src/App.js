@@ -4,8 +4,6 @@ import logo from "./images/logo.png";
 import Filter from './components/Filter';
 import PokemonList from './components/PokemonList'
 
-// const callApi = "https://pokeapi.co/api/v2/pokemon/" 'http://pokeapi.salestock.net/api/v2/pokemon/?limit=25
-;
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +23,7 @@ class App extends Component {
   }
 
   fetchPokemonList (){
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=5' )
+    fetch('http://pokeapi.salestock.net/api/v2/pokemon/?limit=25' )
     .then(response => {
       return response.json();
     })
@@ -37,19 +35,16 @@ class App extends Component {
   details(data){
     let pokemonDetail=[];
     data.forEach(pokemon => {
-      console.log("pokemonURL " + pokemon.url)
       fetch(pokemon.url)
       .then(response => {
         return response.json();
       })
       .then(info => {
-        console.log("pokemonData " + info)
         pokemonDetail.push(info);
         this.setState({
           pokemons: pokemonDetail
         })
       });
-      console.log("arrayPokemonsData" + pokemonDetail)
     });
   }
 
@@ -77,7 +72,7 @@ class App extends Component {
         <div className="pokedex__footer">
           <span>
             <p>Made with <a href="https://pokeapi.co/">PokeApi</a>.
-            Pokémon and Pokémon character names are trademarks of Nintendo</p>
+            Pokémon and Pokémon character names are trademarks of Nintendo.</p>
           </span>
         </div>
       </div>
