@@ -87,6 +87,39 @@
   padding-left: 0px;
   margin: 2px; }
 
+.type--fire {
+  background-color: #ab1f23; }
+
+.type--bug {
+  background-color: #3b9950; }
+
+.type--dragon {
+  background-color: #448b95; }
+
+.type--poison {
+  background-color: #5e2d88; }
+
+.type--grass {
+  background-color: #27cb4f; }
+
+.type--ground {
+  background-color: #6e491f; }
+
+.type--ice {
+  background-color: #86d2f5; }
+
+.type--normal {
+  background-color: #ca98a7; }
+
+.type--electric {
+  background-color: #e3e32b; }
+
+.type--flying {
+  background-color: #4a677d; }
+
+.type--water {
+  background-color: #1552e2; }
+
 * {
   margin: 0;
   padding: 0; }

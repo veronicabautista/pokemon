@@ -3,20 +3,18 @@ import React from "react";
 class PokemonCard extends React.Component {
   render() {
 
-    const newPokemon = this.props.detail;
-
     return (
       <div className="pokemon__card">
         <div className="pokemon__image">
-          <img className="pokemon__picture" src={newPokemon.sprites.front_default} alt="pokemon" />
+          <img className="pokemon__picture" src={this.props.image} alt="pokemon" />
           <span className="pokemon__id--container">
-            <p className="pokemon__id">id / {newPokemon.id}</p>
+            <p className="pokemon__id">id / {this.props.id}</p>
           </span>
         </div>
         <div className="pokemon__info">
-          <p className="pokemon__name">{newPokemon.name}</p>
-          <ul className="pokemon__attack--type">{newPokemon.types.map(attack => {
-            return <li className="pokemon__attack">{attack.type.name}</li>
+          <p className="pokemon__name">{this.props.name}</p>
+          <ul className="pokemon__attack--type">{this.props.types.map((type,index) => {
+            return <li key={index} className={`pokemon__attack type--${type.toUpperCase()}`}>{type}</li>
           })}
           </ul>
         </div>

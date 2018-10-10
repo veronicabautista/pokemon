@@ -15,10 +15,15 @@ class PokemonList extends React.Component {
 						.map((card => {
 							return (
 								<li className="pokemonlist__card" key={card.id}>
-									<PokemonCard detail={card} />
+									<PokemonCard 
+									 image={card.sprites.front_default}
+									 id={card.id}
+									 name={card.name}
+									 types= {card.types.map((t) => t.type.name)}
+									 abilities= {card.abilities.map((ability) => ability.ability.name)} />
 								</li>
-							)
-						}))
+							)}
+						))
 					}
 				</ul>
 			</div>
