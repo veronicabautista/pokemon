@@ -3,9 +3,9 @@ import './App.css';
 import Header from './components/Header';
 import Filter from './components/Filter';
 import PokemonList from './components/PokemonList';
-// import PokemonInfo from './components/PokemonInfo';
+import PokemonInfo from './components/PokemonInfo';
 import Footer from './components/Footer';
-import {Route, Switch} from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +44,9 @@ class App extends Component {
   render() {
     return (
       <div className="pokedex__main">
-        <Header />
+        <Link to='/'>
+          <Header />
+        </Link>  
         <Filter
             searchPokemon={this.searchPokemon} 
             pokemons={this.state.pokemons}
@@ -54,9 +56,14 @@ class App extends Component {
           <PokemonList 
             pokemons={this.state.pokemons}
          pokemonName={this.state.pokemonName} /> }/>
-         {/* <Route path="/PokemonInfo/:id" render={(props) => <PokemonInfo
-          pokemons={this.state.pokemons}
-        pokemonName={this.state.pokemonName} /> }/> */}
+        <Route
+           path="/PokemonInfo/:id"
+           render={props => (
+             <PokemonInfo
+              {...props}
+             />
+           )}
+         />
         </Switch>
         <Footer />
       </div>

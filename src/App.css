@@ -23,8 +23,17 @@
   font-family: 'Ubuntu', sans-serif; }
 
 .pokedex__footer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  height: 60px; }
+
+.footer--text {
   color: #7a5636;
-  font-size: 12px; }
+  font-size: 12px;
+  text-align: center; }
 
 .pokemonlist {
   list-style: none;

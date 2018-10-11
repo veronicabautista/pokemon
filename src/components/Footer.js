@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="pokedex__footer">
-        <span>
+        <span className="footer--text">
           <p>Made with <a href="https://pokeapi.co/">PokeApi</a>.
           Pokémon and Pokémon character names are trademarks of Nintendo.</p>
         </span>
@@ -12,5 +12,4 @@ class Footer extends Component {
     );
   }
 }
-
 export default Footer;

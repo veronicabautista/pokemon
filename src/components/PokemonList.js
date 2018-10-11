@@ -1,6 +1,6 @@
 import React from "react";
 import PokemonCard from "./PokemonCard";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class PokemonList extends React.Component {
 	render() {
@@ -15,16 +15,16 @@ class PokemonList extends React.Component {
 						})
 						.map((card => {
 							return (
-								// <Link to={`/PokemonInfo/${card.id}`}>
+								<Link to={`/PokemonInfo/${card.id}`}>
 								<li className="pokemonlist__card" key={card.id}>
 									<PokemonCard 
 									 image={card.sprites.front_default}
 									 id={card.id}
 									 name={card.name}
-									 types= {card.types.map((t) => t.type.name)}
-									 abilities= {card.abilities.map((ability) => ability.ability.name)} />
+									 types={card.types.map((t) => t.type.name)}
+									 abilities={card.abilities.map((ability) => ability.ability.name)} />
 								</li>
-								// </Link>
+								</Link>
 							)}
 						))
 					}
