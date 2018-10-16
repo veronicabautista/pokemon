@@ -21,19 +21,7 @@ class App extends Component {
 
   componentDidMount () {
     this.pokemonFetchs ();
-    // const pokedex = [];
-    // for (let i = 1; i < 4; i++) {
-    //   fetch('https://pokeapi.co/api/v2/pokemon/' + i + '/').then(response => {
-    //       return response.json();
-    //     })
-    //     .then(info => {
-    //       pokedex.push(info)
-    //       this.setState({ pokemons: [...pokedex ] });
-    //       console.log(this.state.pokemons);
-    //     })
-    // }
   }
-
 
   pokemonFetchs() {
 		for (let i = 1; i <= 4; i++) {
@@ -79,7 +67,6 @@ class App extends Component {
              <PokemonInfo
               match={props.match}
               pokemons={this.state.pokemons} 
-              // {...props}
              />
            )}
          />

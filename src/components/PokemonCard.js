@@ -3,7 +3,7 @@ import React from "react";
 class PokemonCard extends React.Component {
   evolution(evolve_from_specie){
     if (evolve_from_specie === null) {
-      return <p className="pokemon__evolve" > </p>
+      return <p className="pokemon__evolve" >Evolves from: none </p>
 
     } else {
       return <p className="evolve-card" >Evolves from: {evolve_from_specie}</p>

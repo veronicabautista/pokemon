@@ -2,9 +2,11 @@ import React from "react";
 
 class PokemonInfo extends React.Component {
   render() {
-    const { name, sprites, height, weight, types, abilities} = this.props.pokemons[this.props.match.params.id];
-    
+    // console.log(JSON.stringify(this.props));
+    const { name, sprites, height, weight, types, abilities} = this.props.pokemons[this.props.match.params.id -1];
+    console.log(types);
     if (this.props.pokemons.length === 0) {
+      console.log("devuelvo nulo");
       return null;
     } else {
     return (
@@ -12,9 +14,12 @@ class PokemonInfo extends React.Component {
       <p className="pokemon__name">{name}</p>
         <div className="pokemon__image">
           <img className="pokemon__picture" src={sprites.front_default} alt="pokemon" />
-          <ul className="pokemon__attack--type">{types
-            .map((type,index) => {
-            return <li key={index} className="pokemon__attack">{type}</li>
+          <ul className="pokemon__attack--type">{
+            
+            types
+            .map((attack, index) => {
+
+            return <li key={index} className="pokemon__attack">{attack.type.name}</li>
           })}
           </ul>
           <span className="pokemon__id--container">
