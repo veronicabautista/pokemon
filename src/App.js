@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    this.pokemonFetchs ()
+    this.pokemonFetchs ();
     // const pokedex = [];
     // for (let i = 1; i < 4; i++) {
     //   fetch('https://pokeapi.co/api/v2/pokemon/' + i + '/').then(response => {
@@ -36,18 +36,17 @@ class App extends Component {
 
 
   pokemonFetchs() {
-    const pokedex = []
 		for (let i = 1; i <= 4; i++) {
 			Promise.all([
 				fetch('https://pokeapi.co/api/v2/pokemon/' + i + '/').then(response => response.json()),
 				fetch('https://pokeapi.co/api/v2/pokemon-species/' + i + '/').then(response => response.json()),
 				fetch('https://pokeapi.co/api/v2/evolution-chain/' + i + '/').then(response => response.json()),				
 			])
-				.then(([info, pokemonSpecie, pokemonChain]) => {
-					console.log(info)
-					info.evolve_from_specie = pokemonSpecie.evolves_from_species && pokemonSpecie.evolves_from_species.name;
-					info.evolve_to = pokemonChain.chain.evolves_to;
-					this.setState({ pokemons: [...pokedex ] });
+				.then(([pokemon, pokemonSpecie, pokemonChain]) => {
+					pokemon.evolve_from_specie = pokemonSpecie.evolves_from_species && pokemonSpecie.evolves_from_species.name;
+					pokemon.evolve_to = pokemonChain.chain.evolves_to;
+          this.setState({ pokemons: [...this.state.pokemons, pokemon] })
+          console.log(this.state.pokemons);
 				})
 		}
 	}
@@ -78,7 +77,7 @@ class App extends Component {
            path="/PokemonInfo/:id"
            render={props => (
              <PokemonInfo
-             match={props.match}
+              match={props.match}
               pokemons={this.state.pokemons} 
               // {...props}
              />

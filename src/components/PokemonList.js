@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 class PokemonList extends React.Component {
 	render() {
-
 		return (
 			<div className="pokedex__container">
 				<ul className="pokemonlist">

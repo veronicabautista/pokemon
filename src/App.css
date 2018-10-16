@@ -147,3 +147,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   padding: 10px; }
+  body a:link {
+    text-decoration: none; }
+  body a:visited {
+    text-decoration: none; }
