@@ -10,23 +10,18 @@ class PokemonInfo extends React.Component {
       return null;
     } else {
     return (
-      <div className="pokemon__card">
-      <p className="pokemon__name">{name}</p>
-        <div className="pokemon__image">
-          <img className="pokemon__picture" src={sprites.front_default} alt="pokemon" />
-          <ul className="pokemon__attack--type">{
-            
-            types
-            .map((attack, index) => {
-
-            return <li key={index} className="pokemon__attack">{attack.type.name}</li>
-          })}
+      <div className="pokemon__info--card">
+      <p className="pokemon__info--name">{name}</p>
+          <img className="pokemon__info--picture" src={sprites.front_default} alt="pokemon" />
+          <ul className="pokemon__info--attack--type">{types.map((attack, i) => {
+            return <li className={`pokemon__attack type--${types[i].type.name.toLowerCase()}`} key={i}>{attack.type.name}</li>
+            })}
           </ul>
-          <span className="pokemon__id--container">
-            <p className="pokemon__height">Height: {height}</p>
-            <p className="pokemon__weight">Weight: {weight}</p>
+          {/* <span className="pokemon__id--container"> */}
+            <p className="pokemon__height">Height: {height} cm</p>
+            <p className="pokemon__weight">Weight: {weight} g</p>
           
-          <ul className>
+          <ul className="pokemon__abilities">
                 <p>Abilities:</p>
                 {abilities
                   .map((items) => {
@@ -44,9 +39,7 @@ class PokemonInfo extends React.Component {
                   })}
               </ul>
           </div> */}
-          </span>
-          
-        </div>
+          {/* </span> */}
       </div>
     )
 }}}

@@ -3,14 +3,13 @@ import React from "react";
 class PokemonCard extends React.Component {
   evolution(evolve_from_specie){
     if (evolve_from_specie === null) {
-      return <p className="pokemon__evolve" >Evolves from: none </p>
-
+      return <p className="pokemon__evolve" > Evolves from: none </p>
     } else {
-      return <p className="evolve-card" >Evolves from: {evolve_from_specie}</p>
+      return <p className="pokemon__evolve" > Evolves from: {evolve_from_specie}</p>
     }
   }
   render() {
-    const{name, id, sprites, types, evolve_from_specie }= this.props.card ;
+    const{name, id, sprites, types, evolve_from_specie}= this.props.card ;
     return (
       <div className="pokemon__card">
         <div className="pokemon__image">
@@ -21,11 +20,11 @@ class PokemonCard extends React.Component {
         </div>
         <div className="pokemon__info">
           <p className="pokemon__name">{name}</p>
-          <ul className="pokemon__attack--type">{types.map(attack => {
-            return <li className="pokemon__attack">{attack.type.name}</li>
+          <ul className="pokemon__attack--type">{types.map((attack, i) => {
+            return <li className={`pokemon__attack type--${types[i].type.name.toLowerCase()}`} key={i}>{attack.type.name}</li>
             })}
           </ul>
-         {this.evolution(evolve_from_specie)}
+        {this.evolution(evolve_from_specie)}
         </div>
       </div>
     );

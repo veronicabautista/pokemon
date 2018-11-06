@@ -1,9 +1,23 @@
+.pokedex__container {
+  display: flex;
+  justify-content: center;
+}
+
 .pokemonlist {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(2, 180px);
   grid-gap: 20px;
-  justify-content: center;
   margin: 20px;
   box-shadow: 3px;
+  justify-content: center;
+  @media all and (min-width: 768px) {
+      grid-template-columns: repeat(3, 180px); }
+  @media all and (min-width: 1024px) {
+    grid-template-columns: repeat(4, 180px);
+    
+  }
+}
+.pokemonlist__card{
+  border-radius: 20px;	
 }

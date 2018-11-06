@@ -1,83 +1,116 @@
+a {
+  color: black;
+  text-decoration: none; }
+
 .pokedex__main {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   text-align: center; }
 
 .pokedex__tittle {
-  max-width: 500px;
   display: flex;
-  align-content: center; }
+  align-items: center;
+  justify-content: center; }
 
 .pokedex__input {
   box-shadow: 3px; }
 
 .pokedex__searchbox {
-  width: 700px;
+  width: 400px;
   box-shadow: 0px 0px 20px 0px grey;
   border: none;
   text-align: center;
   margin: 10px;
   padding: 5px;
   font-family: 'Ubuntu', sans-serif; }
+  @media all and (min-width: 768px) {
+    .pokedex__searchbox {
+      width: 600px; } }
 
 .pokedex__footer {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   bottom: 0;
-  height: 60px; }
+  height: 60px;
+  position: fixed;
+  margin: 20px; }
 
 .footer--text {
   color: #7a5636;
   font-size: 12px;
   text-align: center; }
 
+.pokedex__container {
+  display: flex;
+  justify-content: center; }
+
 .pokemonlist {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(2, 180px);
   grid-gap: 20px;
-  justify-content: center;
   margin: 20px;
-  box-shadow: 3px; }
+  box-shadow: 3px;
+  justify-content: center; }
+  @media all and (min-width: 768px) {
+    .pokemonlist {
+      grid-template-columns: repeat(3, 180px); } }
+  @media all and (min-width: 1024px) {
+    .pokemonlist {
+      grid-template-columns: repeat(4, 180px); } }
+
+.pokemonlist__card {
+  border-radius: 20px; }
 
 .pokemon__card {
-  box-shadow: 0px 0px 20px 0px grey; }
+  box-shadow: 0px 0px 20px 0px grey;
+  transition: scale ease 1s; }
+  .pokemon__card:hover {
+    transform: scale(1.1); }
 
 .pokemon__image {
-  background-color: lightgrey;
-  width: 200px;
-  height: 120px;
-  padding-top: 10px; }
+  background-color: white;
+  width: 180px;
+  height: 110px;
+  padding-top: 10px;
+  border-bottom: black solid 3px; }
 
 .pokemon__id--container {
-  background-color: #aaa9a9;
+  background-color: #999999;
   display: flex;
   align-content: flex-start;
   justify-content: center;
+  position: absolute;
   width: 50px;
-  padding: 3px; }
+  padding: 3px;
+  border: black 2px solid; }
 
 .pokemon__id {
   text-transform: uppercase;
-  color: #7a5636;
+  color: white;
   font-weight: bold;
   font-size: 12px; }
 
 .pokemon__info {
-  background-color: white;
+  background-color: #E95330;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; }
+  align-items: flex-start;
+  color: white; }
 
 .pokemon__name {
   text-transform: capitalize;
   font-weight: bold; }
+
+.pokemon__evolve {
+  font-size: 12px;
+  border-left: black solid 2px;
+  margin-top: 3px; }
 
 .pokemon__attack--type {
   display: flex;
@@ -88,13 +121,12 @@
 .pokemon__attack {
   list-style: none;
   text-transform: uppercase;
-  color: #7a5636;
   border: 1px solid lightgray;
   border-radius: 3px;
-  font-size: 10px;
-  padding: 2px;
-  padding-left: 0px;
-  margin: 2px; }
+  font-size: 12px;
+  padding: 5px;
+  margin: 2px;
+  text-align: center; }
 
 .type--fire {
   background-color: #ab1f23; }
@@ -129,9 +161,53 @@
 .type--water {
   background-color: #1552e2; }
 
+.pokemon__info--card {
+  box-shadow: 0px 0px 20px 0px grey;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr); }
+
+.pokemon__info--name {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 1; }
+
+.pokemon__info--picture {
+  background-color: salmon;
+  width: auto; }
+
+.pokemon__info--attack--type {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5; }
+
+.pokemon__height {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3; }
+
+.pokemon__weight {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end: 4; }
+
+.pokemon__abilities {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 5; }
+
 * {
   margin: 0;
   padding: 0; }
+
+html {
+  width: 100%;
+  display: block; }
 
 body {
   background-color: #ebb424;
@@ -141,13 +217,9 @@ body {
   background-position: center;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
   font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
-  padding: 10px; }
-  body a:link {
-    text-decoration: none; }
-  body a:visited {
-    text-decoration: none; }
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
