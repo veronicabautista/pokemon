@@ -68,7 +68,8 @@ a {
 
 .pokemon__card {
   box-shadow: 0px 0px 20px 0px grey;
-  transition: scale ease 1s; }
+  transition: scale ease 1s;
+  height: 240px; }
   .pokemon__card:hover {
     transform: scale(1.1); }
 
@@ -97,6 +98,7 @@ a {
 
 .pokemon__info {
   background-color: #E95330;
+  height: 80px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -110,7 +112,6 @@ a {
 
 .pokemon__evolve {
   font-size: 12px;
-  border-left: black solid 2px;
   margin-top: 3px; }
 
 .pokemon__attack--type {
@@ -130,16 +131,16 @@ a {
   text-align: center; }
 
 .type--fire {
-  background-color: #ab1f23; }
+  background-color: #ff7300; }
 
 .type--bug {
-  background-color: #3b9950; }
+  background-color: #2b5e36; }
 
 .type--dragon {
   background-color: #448b95; }
 
 .type--poison {
-  background-color: #5e2d88; }
+  background-color: #882d83; }
 
 .type--grass {
   background-color: #27cb4f; }
@@ -151,7 +152,7 @@ a {
   background-color: #86d2f5; }
 
 .type--normal {
-  background-color: #ca98a7; }
+  background-color: #facc97; }
 
 .type--electric {
   background-color: #e3e32b; }
@@ -161,6 +162,21 @@ a {
 
 .type--water {
   background-color: #1552e2; }
+
+.type--rock {
+  background-color: #3d3d3d; }
+
+.type--fairy {
+  background-color: #ff95ca; }
+
+.type--fight {
+  background-color: #8a3e00; }
+
+.type--steel {
+  background-color: #a5a5a5; }
+
+.type--psychic {
+  background-color: #aa0041; }
 
 .pokemon__info--card {
   box-shadow: 0px 0px 20px 0px grey;

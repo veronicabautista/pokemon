@@ -11,14 +11,14 @@ class PokemonInfo extends React.Component {
     } else {
     return (
       <div className="pokemon__info--card">
-      <p className="pokemon__info--name">{name.name}</p>
+      <p className="pokemon__info--name">{name}</p>
         <div className="pokemon__info--picture">
           <img  src={sprites.front_default} alt="pokemon" />
         </div>
         <ul className="pokemon__info--attack--type">{types.map((attack, i) => {
           return <li className={`pokemon__attack type--${types[i].type.name.toLowerCase()}`} key={i}>{attack.type.name}</li>
           })}
-        </ul>git
+        </ul>
         <div className="pokemon__info--details">
           <p className="pokemon__height">Height: {height} cm</p>
           <p className="pokemon__weight">Weight: {weight} g</p>

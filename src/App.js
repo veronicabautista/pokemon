@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   pokemonFetchs() {
-		for (let i = 1; i <= 150; i++) {
+		for (let i = 1; i <= 5; i++) {
 			Promise.all([
 				fetch('https://pokeapi.co/api/v2/pokemon/' + i + '/').then(response => response.json()),
 				fetch('https://pokeapi.co/api/v2/pokemon-species/' + i + '/').then(response => response.json()),
