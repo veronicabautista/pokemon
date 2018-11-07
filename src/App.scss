@@ -10,7 +10,7 @@
 html {
   width: 100%;
   display:block;
-
+  overflow-x: hidden; 
 }
 body {
   background-color: #ebb424;
@@ -26,4 +26,4 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
- }
+}
