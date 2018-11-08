@@ -7,7 +7,7 @@
   background-image: linear-gradient(to bottom, #ffffff, lightgray);
   background-color: #ffffff;
   position: relative;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 .pokemon__info--name{
   grid-column: 1 / 4;
@@ -18,6 +18,8 @@
   text-transform: capitalize;
   background-color: #E95330;
   border-bottom: 5px solid black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 .pokemon__info--picture{
   display: flex;
